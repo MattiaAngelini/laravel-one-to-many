@@ -30,15 +30,14 @@
                     <label for="cover_image" class="form-label">Image</label>
                     <input class="form-control" type="file" name="cover_image"></textarea>
                 </div>
-
-                
-        <label for="type_id" class="form-label">Type:</label>
-        <select class="form-select" id="type_id" name="type_id">
-            <option value="">Select Type</option>
-            @foreach ($types as $type)
-                <option value="{{ $type->id }}">{{ $type->name }}</option>
-            @endforeach
-
+              
+            <label for="type_id" class="form-label">Type:</label>
+            <select class="form-select" id="type_id" name="type_id">
+                <option value="">Select Type</option>
+                @foreach ($types as $type)
+                    <option @selected($type->id == old('type_id')) value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+            </select>
 
                 <button type="submit" class="btn btn-primary">SAVE NEW PROJECT</button>
             </form>

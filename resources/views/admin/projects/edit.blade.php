@@ -28,7 +28,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="cover_image" class="form-label">Image</label>
+            <label for="cover_image" class="form-label">IMAGE:</label>
             <input class="form-control" type="file" name="cover_image"></textarea>
         </div>
 
@@ -39,6 +39,16 @@
         @else
             <small>Nessuna immagine caricata</small>
         @endif
+
+        <div class="mt-3">
+        <label for="type_id" class="form-label">TYPE:</label>
+        <select class="form-select mb-3" id="type_id" name="type_id">
+            <option value="">Select Type</option>
+            @foreach ($types as $type)
+                <option @selected($type->id == old('type_id')) value="{{ $type->id }}">{{ $type->name }}</option>
+            @endforeach
+        </select>
+        </div> 
 
 
         <button type="submit" class="btn btn-primary">EDIT</button>

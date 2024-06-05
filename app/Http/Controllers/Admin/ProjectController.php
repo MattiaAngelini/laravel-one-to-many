@@ -49,7 +49,8 @@ class ProjectController extends Controller
             [
                 'name' => 'required|min:5|max:150|unique:projects,name',
                 'summary' => 'nullable|min:10',
-                'cover_image' => 'nullable|image|max:256'
+                'cover_image' => 'nullable|image|max:256',
+                'type_id' => 'nullable|exists:types,id'
             ],
 
             [   'name.required' => 'Il campo titolo è obbligatorio',
@@ -95,7 +96,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));   
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project','types'));   
     }
 
     /**
