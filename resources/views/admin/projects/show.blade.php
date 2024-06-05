@@ -5,6 +5,7 @@
     <section>
         <h1>PROGETTO: "{{$project->name}}"</h1>
         <h3>SLUG:</h3> {{$project->slug}}
+        <h3>TYPE:</h3> {{ $project->type ? $roject->type->name : 'No category' }}
         <h3>Descrizione:</h3>{{$project->summary}}  
 
         

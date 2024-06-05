@@ -40,6 +40,7 @@
             <small>Nessuna immagine caricata</small>
         @endif
 
+
         <button type="submit" class="btn btn-primary">EDIT</button>
     </form>
 @endsection
