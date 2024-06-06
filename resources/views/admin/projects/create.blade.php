@@ -35,6 +35,7 @@
             <select class="form-select" id="type_id" name="type_id">
                 <option value="">Select Type</option>
                 @foreach ($types as $type)
+                <!--Value delle options corrisponde al numero del 'type id' per visualizzare i type-->
                     <option @selected($type->id == old('type_id')) value="{{ $type->id }}">{{ $type->name }}</option>
                 @endforeach
             </select>

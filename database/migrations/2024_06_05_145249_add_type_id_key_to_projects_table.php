@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::table('projects', function (Blueprint $table) {
             $table->unsignedBigInteger('type_id')->nullable()->after('id');
            
-            $table->foreign('type_id')
-            ->references('id')
-            ->on('types')
-            ->onDelete('set null');
+            $table->foreign('type_id') //FOREIGN KEY
+            ->references('id') // FA RIFERIMENTO ALLA COLONNA ID
+            ->on('types') // DELLA TABELLA TYPES
+            ->onDelete('set null'); 
         });
     }
 
