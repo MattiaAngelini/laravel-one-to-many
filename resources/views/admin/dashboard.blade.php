@@ -19,6 +19,7 @@
 
                     {{ __('You are logged in!') }}
                     
+                    
 
                     <div>
                         <h1>Welcome {{$userInfo->name}}</h1>
